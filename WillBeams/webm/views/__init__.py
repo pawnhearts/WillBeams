@@ -1,4 +1,4 @@
-from .index import index
+from .index import LastWebmsView, LastWebmsByTagView
 
 from django.contrib.auth.models import User, Group
 from webm.models import Tag, Webm

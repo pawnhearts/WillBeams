@@ -10,8 +10,9 @@ router.register(r'tags', views.TagViewSet)
 router.register(r'webm', views.WebmViewSet)
 
 urlpatterns = [
-    #url(r'', index),
-    url(r'', include(router.urls)),
+    url(r'^$', views.LastWebmsView.as_view()),
+    url(r'^last/([\w-]+)/$', views.LastWebmsByTagView.as_view()),
+    #url(r'', include(router.urls)),
     url(r'^api-auth/',
         include('rest_framework.urls', namespace='rest_framework')),
 ]
